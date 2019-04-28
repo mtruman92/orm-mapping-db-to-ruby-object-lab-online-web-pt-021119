@@ -88,7 +88,7 @@ class Student
     sql = <<-SQL 
     SELECT *
     FROM students 
-    WHERE students.grade = X
+    WHERE students.grade = ?
     SQL
     DB[:conn].execute(sql, x).collect do |row|
       self.new_from_db(row)
